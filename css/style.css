@@ -19,14 +19,15 @@
     
 }
 
-* {
+*,
+*::after,
+*::before {
     margin: 0;
     padding: 0;
     border: 0; 
     outline: 0;          
-    box-sizing: border-box;       
-  }
-  
+    box-sizing: inherit;       
+  }  
   
   body {    
     height: 100vh;
@@ -36,3 +37,80 @@
     background: var(--cor-bg);    
     background-image: url(../img/bg-texture.png);
   }
+
+  html {
+    box-sizing: border-box;
+  }
+
+  .rec {
+    width: 350px;
+    height: 210px;
+    background-color: #ededed;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .circle {
+    width: 80px;
+    height: 80px;
+    background-color: #ededed;
+    border-radius: 50%;
+    overflow: hidden;
+  }
+
+  .text {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1em;
+  }
+
+  .text1 {
+    width: 250px;
+    height: 40px;
+    background-color: #ededed;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .text2 {
+    margin-top: .5em;
+    width: 150px;
+    height: 30px;
+    background-color: #ededed;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .desc {
+    display: flex;
+    flex-direction: row;
+    margin-top: 1em;
+  }
+
+  @keyframes animation {
+    0% {
+      transform: translateX(-100%);
+    }
+
+    50% {
+      transform: translateX(200%);
+    }
+
+    100% {
+      transform: translateX(-100%);
+    }
+  }
+
+  .rec::before, 
+  .circle::before,
+  .text1::before,
+  .text2::before  {    
+    content: "";
+    display: block;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0), #fff, rgba(255, 255, 255, 0)); 
+    animation: animation 1.2s ease-in-out infinite;
+  }
+
+
