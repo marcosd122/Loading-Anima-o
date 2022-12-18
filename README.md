@@ -1,6 +1,6 @@
-# Curso-WEB -- Jogar Dados
+# Curso-WEB -- Loading Animação
 
-Projeto de desenvolvimento Jogar Dados
+Projeto de desenvolvimento Loading Animação
 
 Atividade curso Web
 
